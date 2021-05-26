@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+           <form #signUpForm="ngForm">
+            <div class="col-auto ">
+                <h5 class="card-title"> Create Post</h5>
+                    <div> <input type="text" name="title" [(ngModel)]="Postform.title" placeholder="Title" required></div>
+                    <br>
+                <div><input type="text"  name="description" [(ngModel)]="Postform.description" placeholder="Description" required></div>
+                <br>
+                <div class="col-auto">
+                    <select id="category" name="category" [(ngModel)]="Postform.category" class="form-select" placeholder="category" required>
+                    <option  *ngfor="let categoria of categorias" >{{categoria}}</option>
+                  </select></div>
+                <br>
+                <div><input type="text"  name="urlImg" [(ngModel)]="Postform.urlImg" placeholder="url of image" required></div>
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <button type="cancel" class="btn btn-secondary" id="btn-cancel" (click)="cerrarventana()">Cancel</button>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary" id="btn-submit" (click)="enviarPost()">Save</button>
+                </div>
+            </div>
+
+           </form>
+        </div>
+    </div>
+</div>

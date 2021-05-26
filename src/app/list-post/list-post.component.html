@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<div class="container">
+    <div class="row">
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-primary" (click)="borrarfilto()">All</button>
+          <button type="button" class="btn btn-outline-primary" (click)="Travelfiltro()">Travel</button>
+          <button type="button" class="btn btn-outline-primary" (click)="lifeFiltro()">LifeStyle</button>
+          <button type="button" class="btn btn-outline-primary"(click)="BussinesFiltro()">Bussines</button>
+        </div>
+    </div>
+  </div>
+
+
+<div class="card" style="width: 18rem;" (click)="gotopost()" *ngFor="let post from posts ">
+    <img class="card-img-top"  src={{post.imgPost}} alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <h6 class="card-title" >{{post.category}}</h6>
+      <p class="card-text">{{post.description}}</p>
+      <i class="bi bi-trash" (click)="deletePost()"></i>
+      <i class="bi bi-pencil" (click)="editPost()"></i>
+    </div>
+  </div>
